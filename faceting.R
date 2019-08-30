@@ -7,3 +7,11 @@ filter(gapminder, year %in% c(1962, 2012)) %>%
   ggplot(aes(fertility, life_expectancy, col = continent)) +
   geom_point() +
   facet_grid(continent~year)
+ggsave('figs/faceting-1.png')
+
+# facet by only 'year' in above plot
+filter(gapminder, year%in%c(1962, 2012)) %>%
+  ggplot(aes(fertility, life_expectancy, col = continent)) +
+  geom_point() +
+  facet_grid(. ~ year)
+ggsave('figs/faceting-2.png')
