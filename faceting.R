@@ -1,6 +1,9 @@
 library(tidyverse)
 library(dslabs)
 
+# load data from gapminder object stored in .rda file
+load('rdas/gapminder.rda')
+
 # compare 1962 and 2012 life_expectancy vs fertility
 ds_theme_set()
 filter(gapminder, year %in% c(1962, 2012)) %>%
